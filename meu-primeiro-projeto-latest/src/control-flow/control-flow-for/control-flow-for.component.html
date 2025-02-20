@@ -3,11 +3,24 @@
 <h3>FOR</h3>
 
 <ul>
-  @for(item of loadingData; track item) {
+  @for(
+    item of loadingData; track item;
+    let i = $index;
+    let c = $count;
+    let f = $first;
+    let l = $last;
+    let e = $even;
+    let o = $odd;
+  ) {
 
-    <li>
-       {{ item }}
-    </li>
+    <p> {{ item }} </p>
+    <p>index - {{ i }}</p>
+    <p>count - {{ c }}</p>
+    <p>first - {{ f }}</p>
+    <p>last - {{ l }}</p>
+    <p>even - {{ e }}</p>
+    <p>odd - {{ o }}</p>
+    <p></p>
 
   }
 </ul>
