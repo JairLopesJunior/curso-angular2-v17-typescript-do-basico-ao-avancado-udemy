@@ -2,7 +2,41 @@
   Deferrable Views
 </h2>
 
-@defer {
+<!--
+@defer
+
+on - Especifica uma condição de acionador usando um acionador da lista.
+(idle, timer, viewport, interaction, hover, immediate, prefetch)
+
+when - Especifica uma condição imperativa como uma expressão que retorna
+um booleano. Quando esta expressão se torna verdadeira, o espaço reservado
+é trocado pelo conteudo carregado lentamente (o que pode ser uma operação
+assincrona se as dependencias precisarem ser buscadas).
+
+Nota: Vários on triggers são sempre condições OR. Da mesma forma, on misturado
+com when também são condições OR.
+-->
+
+<!--
+@defer(on idle) - É o default do @defer, quando a paginá carregar tudo
+ele será o último a ser carregado.
+
+@defer(on timer(1000ms)) - Com o timer() é necessário informar o tempo
+de espera para pagina criar o chunk.
+
+@defer(on viewport) - Somente mostra o conteudo quando chegar na posição do defer
+
+@defer(on interaction()) - Ele mostra o conteudo se ter alguma interação
+
+@defer(on hover) - Se passar o hover o conteudo é exibido
+
+@defer(on immediate) - Parecido com o idle espera a tela carregar e mostra o conteudo
+
+@defer(on prefetch) - Ele deixa carregado em chunk porem somente mostra o conteudo
+dependendo da logica/interação
+-->
+
+@defer(on interaction()) {
   <app-control-flow-for></app-control-flow-for>
 } @placeholder {
   <p>Mostrar antes de carregar algo.</p>
