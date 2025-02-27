@@ -10,4 +10,5 @@ import { ControlFlowForComponent } from '../control-flow/control-flow-for/contro
 })
 export class DeferrableViewsComponent {
 
+  isTrue = false;
 }

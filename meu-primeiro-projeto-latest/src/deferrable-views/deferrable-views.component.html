@@ -36,7 +36,7 @@ de espera para pagina criar o chunk.
 dependendo da logica/interação
 -->
 
-@defer(on interaction()) {
+@defer(when isTrue) {
   <app-control-flow-for></app-control-flow-for>
 } @placeholder {
   <p>Mostrar antes de carregar algo.</p>
